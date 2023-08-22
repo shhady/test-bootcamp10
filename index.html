@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="logInContainer" id="loginContainer" style="display: block;">
+        <div class="containerLogInForm">
+            <span class="titleLogin">Login</span>
+            <form class="form">
+                <input type="email" placeholder="email" />
+                <input type="password" placeholder="password" />
+            </form>
+        </div>
+        <div class="orAndLine">
+            <div class="line"></div>
+            <span>OR</span>
+            <div class="line"></div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="submit" class="button" onclick="toggleForm('register')">Create a new account</button>
+        </div>
+    </div>
+
+    <div class="logInContainer" id="registerContainer" style="display: none;">
+        <div class="containerLogInForm">
+            <span class="titleLogin">Register</span>
+            <form class="form">
+                <input type="text" placeholder="name"/>
+                <input type="email" placeholder="email" />
+                <input type="password" placeholder="password" />
+                <input type="password" placeholder="confirm password" />
+            </form>
+        </div>
+        <div class="orAndLine">
+            <div class="line"></div>
+            <span>OR</span>
+            <div class="line"></div>
+        </div>
+        <div  style="display: flex; justify-content: center; align-items: center;">
+            <button type="button" class="button" onclick="toggleForm('login')">Log In</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            const loginContainer = document.getElementById('loginContainer');
+            const registerContainer = document.getElementById('registerContainer');
+            
+            if (formType === 'register') {
+                loginContainer.style.display = 'none';
+                registerContainer.style.display = 'block';
+            } else if (formType === 'login') {
+                loginContainer.style.display = 'block';
+                registerContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
